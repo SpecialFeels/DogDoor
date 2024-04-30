@@ -13,12 +13,12 @@ class BarkRecognizer {
     }
 
     public void recognizeBark(Bark bark) {
-        System.out.println("BarkRecognizer: Heard a bark");
+        System.out.println("BarkRecognizer: I heard a bark!");
         Iterator<Bark> barkIterator = allowedBarks.iterator();
         while (barkIterator.hasNext()) {
             Bark allowedBark = barkIterator.next();
             if (allowedBark.getSound().equals(bark.getSound())) {
-                System.out.println("BarkRecognizer: Recognized the owner's dog's bark");
+                System.out.println("BarkRecognizer: Hello owners dog!");
                 dogDoor.open();
                 return;
             }
