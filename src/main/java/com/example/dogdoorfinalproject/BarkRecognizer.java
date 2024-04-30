@@ -4,29 +4,33 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-class BarkRecognizer {
-    private List<Bark> allowedBarks = new ArrayList<>();
+public class BarkRecognizer {
     private DogDoor dogDoor;
+    private List<Bark> allowedBarks;
 
     public BarkRecognizer(DogDoor dogDoor) {
         this.dogDoor = dogDoor;
-    }
-
-    public void recognizeBark(Bark bark) {
-        System.out.println("BarkRecognizer: I heard a bark!");
-        Iterator<Bark> barkIterator = allowedBarks.iterator();
-        while (barkIterator.hasNext()) {
-            Bark allowedBark = barkIterator.next();
-            if (allowedBark.getSound().equals(bark.getSound())) {
-                System.out.println("BarkRecognizer: Hello owners dog!");
-                dogDoor.open();
-                return;
-            }
-        }
-        System.out.println("BarkRecognizer: Unrecognized bark");
+        this.allowedBarks = new ArrayList<>();
     }
 
     public void registerAllowedBark(Bark bark) {
         allowedBarks.add(bark);
     }
+
+    public void recognizeBark(Bark bark) {
+        System.out.println("BarkRecognizer: Heard a bark");
+        Iterator<Bark> iterator = allowedBarks.iterator();
+        while (iterator.hasNext()) {
+            Bark allowedBark = iterator.next();
+            if (allowedBark.getSound().equals(bark.getSound())) {
+                System.out.println("BarkRecognizer: Recognized the owner's dog's bark");
+                if (dogDoor != null) {
+                    dogDoor.open();
+                }
+                return; // Exit the method after opening the door
+            }
+        }
+        System.out.println("BarkRecognizer: Unrecognized bark");
+    }
+
 }

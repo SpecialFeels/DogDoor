@@ -44,7 +44,7 @@ public class DogDoorApp extends Application {
         // Initialize the Keypad instance with a combination
         keypad = new Keypad("1234");
         // Example usage of the Keypad
-        System.out.println("Enter the keypad combination to unlock the windows:");
+        System.out.println("Enter the keypad combination to unlock the windows and to access the remote!:");
         Scanner scanner = new Scanner(System.in);
         String code = scanner.nextLine();
         keypad.enterCode(code);
