@@ -1,42 +1,33 @@
 package com.example.dogdoorfinalproject;
 
-class DogDoor {
-    private boolean open;
-    private boolean locked;
+public class DogDoor {
+    private DoorState currentState;
+
+    public DogDoor() {
+        this.currentState = new ClosedState(this); // Start with closed state
+    }
+
+    public void changeState(DoorState newState) {
+        this.currentState = newState;
+    }
 
     public void open() {
-        if (!locked) {
-            System.out.println("DogDoor: The dog door is open.");
-            open = true;
-        } else {
-            System.out.println("DogDoor: Cannot open the door. It is locked.");
-        }
+        currentState.open();
     }
 
     public void close() {
-        System.out.println("DogDoor: The dog door is closed.");
-        open = false;
+        currentState.close();
     }
 
     public void lock() {
-        System.out.println("DogDoor: The dog door is locked.");
-        locked = true;
+        currentState.lock();
     }
 
     public void unlock() {
-        System.out.println("DogDoor: The dog door is unlocked.");
-        locked = false;
-    }
-
-    public boolean isOpen() {
-        return open;
+        currentState.unlock();
     }
 
     public boolean isLocked() {
-        return locked;
-    }
-
-    public void detectScratch() {
-        System.out.println("DogDoor: Scratch detected.");
+        return currentState instanceof LockedState;
     }
 }

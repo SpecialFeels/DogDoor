@@ -16,8 +16,6 @@ public class DogDoorApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Initialize the Keypad instance with a combination
-        keypad = new Keypad("1234");
         dogDoor = new DogDoor(); // Initialize the DogDoor instance
         Parent root = FXMLLoader.load(getClass().getResource("Hello.fxml"));
         primaryStage.setTitle("Dog Door App");
@@ -55,7 +53,6 @@ public class DogDoorApp extends Application {
         launch(args);
     }
 
-
     // Getters for accessing DogDoor, BarkRecognizer, and Keypad instances
     public static DogDoor getDogDoor() {
         return dogDoor;
@@ -69,4 +66,5 @@ public class DogDoorApp extends Application {
         return keypad;
     }
 }
+
 
