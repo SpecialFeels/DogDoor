@@ -10,13 +10,13 @@ public class ClosedState implements DoorState {
 
     @Override
     public void open() {
-        System.out.println("The dog door is now open");
+        System.out.println("The dog door is now open.");
         door.changeState(new OpenState(door));
     }
 
     @Override
     public void close() {
-        System.out.println("The dog door is already closed");
+        System.out.println("The dog door is already closed.");
     }
 
     @Override
@@ -27,6 +27,6 @@ public class ClosedState implements DoorState {
 
     @Override
     public void unlock() {
-        System.out.println("The dog door first needs to be unlocked");
+        System.out.println("The dog door first needs to be locked.");
     }
 }

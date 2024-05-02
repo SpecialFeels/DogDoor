@@ -1,0 +1,27 @@
+
+Button:pressed {
+    -fx-background-color: #0d331a;
+    -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.list-cell {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 8px;
+    -fx-text-fill: black;
+}
+
+#openButton, #closeButton, #lockButton, #unlockButton {
+    -fx-background-color: #148c42;
+    -fx-background-radius: 15.0px;
+    -fx-border-width: 0.0px;
+    -fx-font-size: 15.0px;
+    -fx-text-fill: white;
+}
+
+#openButton:hover, #closeButton:hover, #lockButton:hover, #unlockButton:hover {
+    -fx-background-color: #306141;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Keeps the shadow effect */
+}
+

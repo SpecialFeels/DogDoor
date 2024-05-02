@@ -19,9 +19,22 @@ public class DogDoorApp extends Application {
         dogDoor = new DogDoor(); // Initialize the DogDoor instance
         Parent root = FXMLLoader.load(getClass().getResource("Hello.fxml"));
         primaryStage.setTitle("Dog Door App");
-        primaryStage.setScene(new Scene(root, 300, 200));
+
+        // Create the scene
+        Scene scene = new Scene(root, 300, 200);
+
+        // Add the CSS file to the scene's stylesheets
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
+        // Set the scene to the stage
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Dog Door App");
+
+        // Show the stage
         primaryStage.show();
     }
+
+
 
     public static void main(String[] args) {
         // Initialize the DogDoor instance
