@@ -3,7 +3,6 @@ package com.example.dogdoorfinalproject;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 public class BarkRecognizer {
     private DogDoor dogDoor;
     private final List<Bark> allowedBarks;

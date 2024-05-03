@@ -1,17 +1,20 @@
 package com.example.dogdoorfinalproject;
 
 public class DogDoor {
-    private DoorState currentState;
+    private Remote currentState;
 
     public DogDoor() {
-        this.currentState = new ClosedState(this); // Start with closed state
+        //start with closed state by default
+        this.currentState = new ClosedState(this);
     }
 
-    public void changeState(DoorState newState) {
+    public void changeState(Remote newState) {
+        //change the state of the door
         this.currentState = newState;
     }
 
     public void open() {
+        //delegate opening action to the current state
         currentState.open();
     }
 
@@ -28,6 +31,8 @@ public class DogDoor {
     }
 
     public boolean isLocked() {
+        //check if the door is locked
         return currentState instanceof LockedState;
     }
 }
+

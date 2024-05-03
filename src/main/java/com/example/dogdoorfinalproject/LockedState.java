@@ -1,7 +1,7 @@
 package com.example.dogdoorfinalproject;
 
 // LockedState.java
-public class LockedState implements DoorState {
+public class LockedState implements Remote {
     private DogDoor door;
 
     public LockedState(DogDoor door) {

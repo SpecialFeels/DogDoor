@@ -1,7 +1,7 @@
 package com.example.dogdoorfinalproject;
 
 // OpenState.java
-public class OpenState implements DoorState {
+public class OpenState implements Remote {
     private DogDoor door;
 
     public OpenState(DogDoor door) {

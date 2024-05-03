@@ -20,9 +20,5 @@ public class Keypad {
         }
     }
 
-    // Method to check if the keypad is currently locked
-    public boolean isLocked() {
-        return locked;
-    }
 }
 

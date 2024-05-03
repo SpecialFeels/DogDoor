@@ -18,8 +18,7 @@ public class ScratchDetector {
 
     // Placeholder method to simulate scratching detection for the owner's dog
     private boolean isOwnersDogScratching() {
-        // Implement logic to identify the owner's dog scratching
-        // For simplicity, let's assume it's always the owner's dog scratching
+        //return true to simulate owner dog scratching
         return true;
     }
 }
