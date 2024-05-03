@@ -1,7 +1,7 @@
 package com.example.dogdoorfinalproject;
 
 public class ClosedState implements Remote {
-    private DogDoor door;
+    private final DogDoor door;
 
     public ClosedState(DogDoor door) {
         this.door = door;

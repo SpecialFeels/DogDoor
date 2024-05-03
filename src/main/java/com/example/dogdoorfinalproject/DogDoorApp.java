@@ -4,15 +4,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.util.Objects;
 import java.util.Scanner;
 
 public class DogDoorApp extends Application {
 
     private static DogDoor dogDoor;
-    private static BarkRecognizer barkRecognizer;
-    private static Keypad keypad;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -41,7 +38,7 @@ public class DogDoorApp extends Application {
         dogDoor = new DogDoor();
 
         //initialize the barkrecognizer instance
-        barkRecognizer = new BarkRecognizer(dogDoor);
+        BarkRecognizer barkRecognizer = new BarkRecognizer(dogDoor);
         Bark ownerBark = new Bark("Woof");
         barkRecognizer.registerAllowedBark(ownerBark);
 
@@ -60,7 +57,7 @@ public class DogDoorApp extends Application {
         scratchDetector.detectScratch();
 
         //initialize the Keypad instance with a combination
-        keypad = new Keypad("1234");
+        Keypad keypad = new Keypad("997757");
         //use of the Keypad
         System.out.println("Enter the keypad combination to unlock the windows and to access the remote!:");
         Scanner scanner = new Scanner(System.in);
