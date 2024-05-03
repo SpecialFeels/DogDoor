@@ -54,6 +54,13 @@ public class DogDoorApp extends Application {
         Bark anotherDogBark = new Bark("Bark");
         barkRecognizer.recognizeBark(anotherDogBark);
 
+        // Initialize the ScratchDetector instance
+        ScratchDetector scratchDetector = new ScratchDetector(dogDoor);
+
+        // Simulate scratching by the owner's dog
+        //System.out.println("Owner's dog scratches at the door.");
+        scratchDetector.detectScratch();
+
         // Initialize the Keypad instance with a combination
         keypad = new Keypad("1234");
         // Example usage of the Keypad
@@ -61,6 +68,8 @@ public class DogDoorApp extends Application {
         Scanner scanner = new Scanner(System.in);
         String code = scanner.nextLine();
         keypad.enterCode(code);
+
+
 
         // After performing necessary operations, start the JavaFX application
         launch(args);
